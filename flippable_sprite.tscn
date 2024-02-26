@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddrr1wenbg25t"]
+
+[ext_resource type="Script" path="res://flippable_sprite.gd" id="2_40xj1"]
+
+[node name="FlippableSprite" type="Sprite2D"]
+script = ExtResource("2_40xj1")

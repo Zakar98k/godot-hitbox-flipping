@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bs54sqhqaqxw5"]
+
+[ext_resource type="Texture2D" uid="uid://diae8fp7ilwbh" path="res://icon.svg" id="1_2tqfc"]
+[ext_resource type="PackedScene" uid="uid://ddipb4kkr7yqq" path="res://player.tscn" id="2_0ah3l"]
+[ext_resource type="PackedScene" uid="uid://c2ce6f2e4ha3p" path="res://boar.tscn" id="3_qaf45"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iqqrb"]
+size = Vector2(685, 64)
+
+[node name="Level" type="Node2D"]
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(0, 280)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_iqqrb")
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor"]
+scale = Vector2(5.35938, 0.5)
+texture = ExtResource("1_2tqfc")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_0ah3l")]
+
+[node name="Boar" parent="." instance=ExtResource("3_qaf45")]
+position = Vector2(112, 108)
+
+[node name="Boar2" parent="." instance=ExtResource("3_qaf45")]
+position = Vector2(176, 131)
+
+[node name="Boar3" parent="." instance=ExtResource("3_qaf45")]
+position = Vector2(-121, 123)

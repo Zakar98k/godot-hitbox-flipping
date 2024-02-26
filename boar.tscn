@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://c2ce6f2e4ha3p"]
+
+[ext_resource type="Script" path="res://boar.gd" id="1_pfnup"]
+[ext_resource type="Texture2D" uid="uid://dt2rhf8p78fl" path="res://assets/Idle-Sheet-export-Back.png" id="1_q22e3"]
+[ext_resource type="PackedScene" uid="uid://ddrr1wenbg25t" path="res://flippable_sprite.tscn" id="3_fwxc1"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_c5lgl"]
+friction = 0.7
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1xd5s"]
+radius = 13.0
+height = 38.0
+
+[node name="Boar" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_c5lgl")
+script = ExtResource("1_pfnup")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 3)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_1xd5s")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_q22e3")
+hframes = 4
+
+[node name="FlippableSprite" parent="." instance=ExtResource("3_fwxc1")]
